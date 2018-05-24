@@ -6,7 +6,14 @@ class BookDetail extends React.Component {
 		console.log({ activeBook: this.props.activeBook });
 		return (
 			<div>
-				{this.props.activeBook ? this.props.activeBook.title : undefined}
+				{this.props.activeBook ? (
+					<div>
+						<p>Title: {this.props.activeBook.title}</p>
+						<p>Pages: {this.props.activeBook.pages}</p>
+					</div>
+				) : (
+					'Select a book to display details'
+				)}
 			</div>
 		);
 	}
